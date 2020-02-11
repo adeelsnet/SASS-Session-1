@@ -13,6 +13,8 @@
     $ghostwhite-color:ghostwhite;
     $heading-color: #4e4d4d;
     $light-brown: #6f6f6f;
+    $footer-bg-color: #414141;
+    $section-txt-color: #c8c8c8;
     // images
     $background-img-container: url(../img/img_tree.png);
     $top-margin: 0px;
@@ -95,7 +97,7 @@
     }
     
     @mixin container-txt {
-        background-color: $darkgrey-color;
+        background-color: $section-txt-color;
         margin-bottom: 8px;
         height: 10px;
     }
@@ -124,6 +126,14 @@
         width: 269px;
         height: 100px;
         margin-right: 8px;
+    }
+    
+    @mixin footer-style($footer-bg-color) {
+        width: 100%;
+        height: 260px;
+        background-color: $footer-bg-color;
+        margin-top: 40px;
+        padding-top: 40px;
     }
     
     form.example button:hover {
@@ -218,23 +228,67 @@
     
     .text {
         &5 {
-            @include section-txt(#c8c8c8, 0px, 269px);
+            @include section-txt($section-txt-color, 0px, 269px);
         }
         &6 {
-            @include section-txt(#c8c8c8, 8px, 220px);
+            @include section-txt($section-txt-color, 8px, 220px);
         }
         &7 {
-            @include section-txt(#c8c8c8, 8px, 200px);
+            @include section-txt($section-txt-color, 8px, 200px);
         }
         &8 {
-            @include section-txt(#c8c8c8, 8px, 269px);
+            @include section-txt($section-txt-color, 8px, 269px);
         }
         &72 {
             @include section-txt(transparent, 8px, 200px);
+        }
+        &9 {
+            @include section-txt($section-txt-color, 12px, 250px);
+        }
+        &10 {
+            @include section-txt($section-txt-color, 15px, 220px);
         }
     }
     
     .middle,
     .right {
         @include middle-right();
+    }
+    
+    footer {
+        @include footer-style(#414141);
+    }
+    
+    .foot {
+        margin-left: 150px;
+        margin-top: 30px;
+    }
+    
+    .footer- {
+        &left {
+            float: left;
+            width: 269px;
+            margin-right: 8px;
+            margin-left: 150px;
+        }
+        &mid {
+            float: left;
+            width: 269px;
+            margin-right: 8px;
+        }
+    }
+    
+    hr {
+        width: 1100px;
+        margin: 0 auto;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    
+    .icon {
+        color: $section-txt-color;
+        margin-top: 20px;
+        margin-left: 40px;
+        height: 32px;
+        width: 32px;
     }
