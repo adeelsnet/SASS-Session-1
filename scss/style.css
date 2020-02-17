@@ -91,14 +91,20 @@ a:hover {
 }
 
 .section1 {
-  background-color: white;
-  background-image: url(../img/img_tree.png);
-  width: 100%;
-  padding-top: 30px;
-  padding-bottom: 40px;
-  background-repeat: no-repeat;
-  /* background-attachment: fixed; */
-  background-position: 50% 20%;
+  background-image: none;
+}
+
+@media (min-width: 70.3125em) {
+  .section1 {
+    background-color: white;
+    background-image: url(../img/img_tree.png);
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: 50% 20%;
+  }
 }
 
 .text1 {

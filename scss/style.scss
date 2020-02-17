@@ -1,23 +1,5 @@
-    $box-size: border-box;
-    // FONTS
-    $body-font: 'Segoe UI',
-    Tahoma,
-    Geneva,
-    Verdana,
-    sans-serif;
-    // COLORS
-    $grey-color: grey;
-    $white-color: white;
-    $green-color: green;
-    $darkgrey-color: #404040;
-    $ghostwhite-color:ghostwhite;
-    $heading-color: #4e4d4d;
-    $light-brown: #6f6f6f;
-    $footer-bg-color: #414141;
-    $section-txt-color: #c8c8c8;
-    // images
-    $background-img-container: url(../img/img_tree.png);
-    $top-margin: 0px;
+    @import "mixin";
+    @import "variables";
     * {
         box-sizing: $box-size;
     }
@@ -26,114 +8,12 @@
         font-family: $body-font;
     }
     
-    @mixin form-ex-input {
-        margin-top: 14px;
-        padding: 5px;
-        font-size: 11px;
-        border: 1px solid $grey-color;
-        float: left;
-        width: 200px;
-        background: $white-color;
-    }
-    
-    @mixin nav-search-btn {
-        float: left;
-        width: 30px;
-        padding: 6px;
-        background-color: $grey-color;
-        color: $white-color;
-        font-size: 9px;
-        border: 1px solid $grey-color;
-        border-left: none;
-        cursor: pointer;
-        margin-top: 14px;
-    }
-    
-    @mixin main-container {
-        max-width: 1400px;
-        width: 100%;
-        margin: 0 auto;
-        overflow: hidden;
-    }
-    
-    @mixin header-mixin {
-        background-color: $darkgrey-color;
-        width: 100%;
-        padding-top: 20px;
-        padding-bottom: 5px;
-    }
-    
-    @mixin logo {
-        margin-bottom: 20px;
-        margin-left: 150px;
-        margin-right: 150px;
-        float: left;
-        width: auto;
-    }
-    
     form.example button {
         @include nav-search-btn();
     }
     
     form.example input[type=text] {
         @include form-ex-input();
-    }
-    
-    @mixin anchor {
-        color: $ghostwhite-color;
-        text-decoration: none;
-        margin-bottom: 20px;
-    }
-    
-    @mixin section-1 {
-        background-color: $white-color;
-        background-image: $background-img-container;
-        width: 100%;
-        padding-top: 30px;
-        padding-bottom: 40px;
-        background-repeat: no-repeat;
-        /* background-attachment: fixed; */
-        background-position: 50% 20%;
-    }
-    
-    @mixin container-txt {
-        background-color: $section-txt-color;
-        margin-bottom: 8px;
-        height: 10px;
-    }
-    
-    @mixin container-btn($green-color) {
-        background-color: $green-color;
-        font-size: 35px;
-        border: none;
-        color: $white-color;
-        padding: 5px 10px 5px 80px;
-        cursor: pointer;
-        margin-top: 30px;
-        border-radius: 4px;
-        font-size: 25px;
-    }
-    
-    @mixin section-txt($txt-color-white, $top-margin, $var-width) {
-        height: 10px;
-        background-color: $txt-color-white;
-        margin-top: $top-margin;
-        width: $var-width;
-    }
-    
-    @mixin middle-right {
-        float: left;
-        width: 269px;
-        height: 100px;
-        margin-right: 8px;
-    }
-    
-    @mixin footer-style($footer-bg-color) {
-        width: 100%;
-        height: 260px;
-        background-color: $footer-bg-color;
-        margin-top: 40px;
-        padding-top: 40px;
     }
     
     form.example button:hover {
@@ -187,9 +67,15 @@
     }
     
     .section1 {
-        @include section-1();
+        background-image: none;
+        @include mobileFirst(1125) {
+            @include section-1();
+        }
     }
     
+    // .section1 {
+    //     @include section-1();
+    // }
     .text {
         &1 {
             @include container-txt();
